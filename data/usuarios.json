@@ -1,0 +1,26 @@
+[
+  {
+    "email": "user1@email.com",
+    "senha": "123456",
+    "nome": "Alice Silva",
+    "aluguel_pago": true,
+    "condominio_pago": true,
+    "desconto": 0
+  },
+  {
+    "email": "user2@email.com",
+    "senha": "123456",
+    "nome": "Bruno Costa",
+    "aluguel_pago": true,
+    "condominio_pago": false,
+    "desconto": 0
+  },
+  {
+    "email": "user3@email.com",
+    "senha": "123456",
+    "nome": "Carla Mendes",
+    "aluguel_pago": false,
+    "condominio_pago": true,
+    "desconto": 10
+  }
+]
