@@ -1,0 +1,30 @@
+<div id="reset-page" class="page" style="display: none;">
+    <div class="container">
+      <div class="login-card">
+        <div class="login-header">
+          <h1>Recuperar Senha</h1>
+          <p>Informe seu e-mail para receber um link de recuperação</p>
+        </div>
+  
+        <div class="alert success-message" id="reset-success" style="display: none;">
+          <span>Link de recuperação enviado com sucesso.</span>
+        </div>
+  
+        <div class="alert error-message" id="reset-error" style="display: none;">
+          <span>Erro ao enviar. Tente novamente.</span>
+        </div>
+  
+        <form id="reset-form" class="login-form">
+          <div class="form-group">
+            <label for="reset-email">Email</label>
+            <input type="email" id="reset-email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="reset-button">Recuperar Senha</button>
+          <div class="form-footer">
+            <a href="#" id="back-to-login">Voltar ao login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

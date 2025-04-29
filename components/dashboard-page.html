@@ -1,0 +1,39 @@
+<div id="dashboard-page" class="page" style="display: none;">
+  <header class="header">
+    <div class="header-container">
+      <h1>Portal de Aluguéis</h1>
+      <div>
+        <span id="user-name">Usuário</span>
+        <button id="logout-button">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h2>Dashboard</h2>
+    </div>
+  
+    <div class="cards-container" id="cards-container">
+      <!-- Os 3 cards serão inseridos aqui -->
+    </div>
+  </main>
+  
+  <script type="module">
+    const container = document.getElementById("cards-container");
+    const cardPaths = [
+      "./components/rent-card.html",
+      "./components/condo-card.html",
+      "./components/discount-card.html"
+    ];
+  
+    for (const path of cardPaths) {
+      const res = await fetch(path);
+      const html = await res.text();
+      const wrapper = document.createElement("div");
+      wrapper.innerHTML = html;
+      container.appendChild(wrapper.firstElementChild);
+    }
+  </script>
+  
+</div>
