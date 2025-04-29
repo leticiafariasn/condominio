@@ -1,7 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  background: #f0f4f8;
+  color: #000;
 }
 
 .container, .header-container, .main-content {
@@ -10,43 +11,220 @@ body {
   padding: 20px;
   background: white;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .login-card, .card {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
   margin-bottom: 20px;
+  background: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3 {
   margin-top: 0;
+  color: #000;
+}
+
+.login-header h1 {
+  color: #0052cc;
+  margin-bottom: 8px;
 }
 
 input {
   width: 100%;
-  padding: 8px;
-  margin: 6px 0;
+  padding: 12px;
+  margin: 8px 0;
   box-sizing: border-box;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0052cc;
+  outline: none;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 24px;
+  background-color: #0052cc;
   border: none;
   color: white;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #003d99;
 }
 
 .alert {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+
+.error-message {
   background-color: #ffe0e0;
-  padding: 10px;
-  margin-bottom: 10px;
-  color: #a00;
-  border-radius: 4px;
+  color: #d50000;
+  border-left: 4px solid #d50000;
+}
+
+.header {
+  background-color: #0052cc;
+  color: white;
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.header h1 {
+  color: white;
+  margin: 0;
+}
+
+#logout-button {
+  background-color: white;
+  color: #0052cc;
+  padding: 8px 16px;
+}
+
+#logout-button:hover {
+  background-color: #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-footer {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #0052cc;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #discount-card {
+    grid-column: span 2;
+  }
+}
+
+.card-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.card-header h3 {
+  color: #0052cc;
+  margin: 0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f0f4f8;
+}
+
+#rent-status, #condo-status, #discount-value {
+  color: #0052cc;
+}
+
+#user-name {
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+/* Estilos específicos para status */
+#rent-status:contains("Pago"), 
+#condo-status:contains("Pago") {
+  color: #00875a;
+  background-color: #e3fcef;
+}
+
+#rent-status:contains("Em aberto"), 
+#condo-status:contains("Em aberto") {
+  color: #de350b;
+  background-color: #ffebe6;
+}
+
+/* Ajustes para o login */
+.login-form {
+  margin-top: 24px;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 480px) {
+  .container, .header-container, .main-content {
+    margin: 10px;
+    padding: 16px;
+  }
+  
+  .login-card, .card {
+    padding: 16px;
+  }
 }
